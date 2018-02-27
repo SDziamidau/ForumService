@@ -22,8 +22,11 @@ namespace ForumTests
         [TestMethod]
         public void RepoConstructorWithParamsTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
 
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             Assert.IsNotNull(xmlRepo);
@@ -34,9 +37,11 @@ namespace ForumTests
         [TestMethod]
         public void RepoConstructorWithValidatorTest()
         {
-            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\PostsDB.xml");
-            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\CommentsDB.xml");
-
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\PostsDB.xml");
+                File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository(new ForumXMLValidator());
             Assert.IsNotNull(xmlRepo);
             Assert.IsTrue(File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\PostsDB.xml"));
@@ -46,8 +51,11 @@ namespace ForumTests
         [TestMethod]
         public void AddPostTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             Assert.IsTrue(xmlRepo.AddPost(new Post(1, postBody1)));
             Assert.IsTrue(xmlRepo.AddPost(new Post(2, postBody2)));
@@ -59,8 +67,11 @@ namespace ForumTests
         [TestMethod]
         public void GetPostTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddPost(new Post(1, postBody1));
             xmlRepo.AddPost(new Post(2, postBody2));
@@ -77,8 +88,11 @@ namespace ForumTests
         [TestMethod]
         public void GetAllPostsTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddPost(new Post(1, postBody1));
             xmlRepo.AddPost(new Post(2, postBody2));
@@ -92,8 +106,11 @@ namespace ForumTests
         [TestMethod]
         public void DeletePostTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddPost(new Post(1, postBody1));
             xmlRepo.AddPost(new Post(2, postBody2));
@@ -111,8 +128,11 @@ namespace ForumTests
         [TestMethod]
         public void AddCommentTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             Assert.IsTrue(xmlRepo.AddComment(new Comment(1, 1, commentBody1)));
             Assert.IsTrue(xmlRepo.AddComment(new Comment(2, 1, commentBody2)));
@@ -124,8 +144,11 @@ namespace ForumTests
         [TestMethod]
         public void GetCommentTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddComment(new Comment(1, 1, commentBody1));
             xmlRepo.AddComment(new Comment(2, 1, commentBody2));
@@ -141,8 +164,11 @@ namespace ForumTests
         [TestMethod]
         public void GetAllCommentsTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddComment(new Comment(1, 1, commentBody1));
             xmlRepo.AddComment(new Comment(2, 1, commentBody2));
@@ -156,8 +182,11 @@ namespace ForumTests
         [TestMethod]
         public void DeleteCommentTest()
         {
-            File.Delete("\\XML_Data\\PostsDB.xml");
-            File.Delete("\\XML_Data\\CommentsDB.xml");
+            if (File.Exists("\\XML_Data\\PostsDB.xml"))
+            {
+                File.Delete("\\XML_Data\\PostsDB.xml");
+                File.Delete("\\XML_Data\\CommentsDB.xml");
+            }
             IForumRepository xmlRepo = new ForumXmlRepository("\\XML_Data\\PostsDB.xml", "\\XML_Data\\CommentsDB.xml");
             xmlRepo.AddComment(new Comment(1, 1, commentBody1));
             xmlRepo.AddComment(new Comment(2, 1, commentBody2));
