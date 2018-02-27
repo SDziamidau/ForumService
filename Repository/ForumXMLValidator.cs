@@ -9,7 +9,7 @@ using System.IO;
 
 namespace ForumRepository
 {
-    public class ForumXMLValidator: IValidation
+    public class ForumXMLValidator: IValidator
     {
         string postsDBPath = AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\PostsDB.xml";
         string commentsDBPath = AppDomain.CurrentDomain.BaseDirectory + "\\XML_Data\\CommentsDB.xml";

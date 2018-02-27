@@ -46,7 +46,7 @@
     <Compile Include="ForumXmlRepository.cs" />
     <Compile Include="ForumXMLValidator.cs" />
     <Compile Include="IForumRepository.cs" />
-    <Compile Include="IValidation.cs" />
+    <Compile Include="IValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

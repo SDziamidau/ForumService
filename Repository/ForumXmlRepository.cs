@@ -16,7 +16,7 @@ namespace ForumRepository
         private XDocument xmlPostsData;
         private XDocument xmlCommentsData;
 
-        private IValidation validator;
+        private IValidator validator;
 
         public ForumXmlRepository()
         {
@@ -85,7 +85,7 @@ namespace ForumRepository
 
             this.validator = new ForumXMLValidator(xmlPostsData, xmlCommentsData); 
         }
-        public ForumXmlRepository(IValidation validator)
+        public ForumXmlRepository(IValidator validator)
         {
             this.validator = validator;
 
